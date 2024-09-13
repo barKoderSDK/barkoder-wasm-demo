@@ -35,6 +35,12 @@ import { createApp, ref , isProxy, toRaw} from 'https://unpkg.com/vue@3/dist/vue
 ```
 
 As you know there are other ways to include vue, we won't go into other methods to develop a vue3 app.
+Keep in mind this is the development vue3 version, in producton one would use:
+
+
+```javascript
+import { createApp, ref, isProxy, toRaw } from 'https://unpkg.com/vue@3/dist/vue.global.prod.js';
+```
 
 
 ### Main barkoder Object
