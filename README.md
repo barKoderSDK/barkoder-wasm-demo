@@ -27,16 +27,30 @@ Download or clone the repository.
 
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.esm-browser.js"></script>
+```
 
-
+You can also use direct import, as we've used in our ```demoApp.js``` to include it directly
 ```javascript
-const BarkoderSDK = ... // Link to the Barkoder SDK initialization (handled in the app).
+import { createApp, ref , isProxy, toRaw} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+```
+
+As you know there are other ways to include vue, we won't go into other methods to develop a vue3 app.
+
+
+### Main barkoder Object
+
+```const BarkoderSDK ``` is available via the inclusion of barkoder-umd.js which we do in our index.html file with
+
+```html
+<script type="text/javascript" src="js/barkoder-umd.js"></script>
+```
 
 
 ## Running the Application
 
 ```javascript
 createApp({...}).mount('#wasmApp');
+```
 
 ### Initialize the barcode scanner
 
@@ -45,37 +59,36 @@ async mounted () {
     await this.setBarkoderWasmScanner();
     await this.readTemplate();
 }
-
+```
 
 Use the application through the mounted #wasmApp element.
 
 
 ## Key Components
 ### Data Properties
-- selections: Stores the current settings, such as active camera, barcode type, enabled decoders, and more.
-- totalScannedBarcodes: Keeps track of all the scanned barcodes.
-- Barkoder: The Barkoder SDK instance responsible for handling scanning logic.
-flags: Manages the UI state, including modes and visibility of result boxes.
+- **selections**: Stores the current settings, such as active camera, barcode type, enabled decoders, and more.
+- **totalScannedBarcodes**: Keeps track of all the scanned barcodes.
+- **Barkoder**: The Barkoder SDK instance responsible for handling scanning logic.
+- **flags**: Manages the UI state, including modes and visibility of result boxes.
 ### Computed Properties
-- templateTitle: Returns the human-readable title for the current template.
-- barcode_types: Filters available barcode types based on the selected type (1D or 2D).
-- decoderSpeedList: Provides available decoder speed options.
-- cameraResolutionList: Provides the available camera resolution options.
-- latestResult: Returns the latest scanned result.
+- **templateTitle**: Returns the human-readable title for the current template.
+- **barcode_types**: Filters available barcode types based on the selected type (1D or 2D).
+- **decoderSpeedList**: Provides available decoder speed options.
+- **cameraResolutionList**: Provides the available camera resolution options.
+- **latestResult**: Returns the latest scanned result.
 ### Methods
-- startScanner(): Starts the barcode scanner and handles the result processing.
-- stopScanner(mode): Stops the scanner and optionally restarts it.
-- toggleBatchMultiScan(): Toggles between single-scan and multi-scan modes.
-- showResult(result): Displays the scanned result with visual overlays and handles notifications.
-- changeCamera(cameraId): Switches the active camera and restarts the scanner.
-- exportToCSV(): Converts scan results into a CSV file for export.
-- convertToCSV(): Helper method to format scan data as CSV.
+- **startScanner()**: Starts the barcode scanner and handles the result processing.
+- **stopScanner(mode)**: Stops the scanner and optionally restarts it.
+- **toggleBatchMultiScan()**: Toggles between single-scan and multi-scan modes.
+- **showResult(result)**: Displays the scanned result with visual overlays and handles notifications.
+- **changeCamera(cameraId)**: Switches the active camera and restarts the scanner.
+- **exportToCSV()**: Converts scan results into a CSV file for export.
+- **convertToCSV()**: Helper method to format scan data as CSV.
 
 ## License
 
-barKoder SDK uses a license to operate. Once one is obtained it can be used within the ```setBarkoderWasmScanner
-method.
+[barKoder SDK](https://barkoder.com) uses a license to operate. Once one is obtained it can be used within the ```setBarkoderWasmScanner``` method.
 
-Running the barKoder Barcode Scanner SDK without a valid trial or production license will result in all successful barcode scan results being partially masked with asterisks (*). Don't worry, though! You can easily get a trial license by registering on the barKoder Portal and using the self-service Evaluation License Generation.
+Running the barKoder Barcode Scanner SDK without a valid trial or production license will result in all successful barcode scan results being partially masked with asterisks (*). Don't worry, though! You can easily get a trial license by registering on the barKoder Portal and using the self-service [Evaluation License Generation](https://barkoder.com/request-quote).
 
 Each trial license is valid for 30 days and can be used on up to 25 devices.
