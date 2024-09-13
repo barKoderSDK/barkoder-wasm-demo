@@ -54,7 +54,7 @@ createApp({...}).mount('#wasmApp');
 
 ### Initialize the barcode scanner
 
-```
+```javascript
 async mounted () {
     await this.setBarkoderWasmScanner();
     await this.readTemplate();
