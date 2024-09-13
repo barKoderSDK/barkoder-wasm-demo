@@ -39,7 +39,7 @@ As you know there are other ways to include vue, we won't go into other methods 
 
 ### Main barkoder Object
 
-```const BarkoderSDK ``` is available via the inclusion of barkoder-umd.js which we do in our index.html file with
+```const BarkoderSDK ``` is available via the inclusion of ```barkoder-umd.js``` which we do in our ```index.html``` file with
 
 ```html
 <script type="text/javascript" src="js/barkoder-umd.js"></script>
