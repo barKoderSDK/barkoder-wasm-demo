@@ -97,4 +97,4 @@ Use the application through the mounted #wasmApp element.
 
 Running the barKoder Barcode Scanner SDK without a valid trial or production license will result in all successful barcode scan results being partially masked with asterisks (*). Don't worry, though! You can easily get a trial license by registering on the barKoder Portal and using the self-service [Evaluation License Generation](https://barkoder.com/request-quote).
 
-Each trial license is valid for 30 days and can be used on up to 25 devices.
+Each trial license is valid for 30 days and can be used on up to 50 devices.
