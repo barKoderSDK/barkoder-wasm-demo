@@ -765,7 +765,7 @@ createApp({
             let license_key = "just-an-empty-string"; //this is where you input your license key generated on the barkoder portal
 
 
-            this.Barkoder = await BarkoderSDK.initialize(license_key);
+            this.Barkoder = await BarkoderSDK.initialize(license_key, { wasmPath: './js/' });
 
             this.cameras = await this.Barkoder.getCameras();
             
